@@ -22,6 +22,9 @@ def home():
 @app.route("/health")
 def health():
     return jsonify(healthy=True)
-
+@app.route("/test", methods=["GET"])
+def test():
+    return jsonify(status="build-video endpoint ready", url="/build-video")
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=PORT)
+    
